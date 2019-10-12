@@ -13,14 +13,14 @@ class Producer {
     @Autowired
     private val kafkaTemplate: KafkaTemplate<String, String>? = null
 
-    fun sendMessage(message: String) {
-        logger.info(String.format("#### -> Producing message -> %s", message))
-        this.kafkaTemplate!!.send(TOPIC, message)
-    }
-
     companion object {
 
         private val logger = LoggerFactory.getLogger(Producer::class.java)
-        private val TOPIC = "test01"
+        private const val TOPIC = "test01"
+    }
+
+    fun sendMessage(message: String) {
+        logger.info(String.format("#### -> Producing message -> %s", message))
+        this.kafkaTemplate!!.send(TOPIC, message)
     }
 }
