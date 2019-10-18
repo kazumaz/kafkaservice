@@ -6,8 +6,7 @@ this is a sample project using kafka and spring boot
 `docker-compose up -d`
 
 ## not first 
-d`ocker start kafka`
-
+`docker start kafka`
 `docker start zookeeper-1`
 
 ## put message
